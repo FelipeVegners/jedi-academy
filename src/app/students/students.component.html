@@ -1,13 +1,12 @@
 <div *ngIf="student">
   Student: <a href="#" (click)="clicked()">{{student?.name}}</a>
   <br/>
-  <div *ngIf="student?.isJedi">
+  <!-- <div *ngIf="student?.isJedi">
     Jedi Temple: {{student?.temple}} <br/>
-  </div>
-  <div #jediSign class="jediSign"></div>
-<button (click)="jediSign.style.background='lightgreen'">Is Jedi?</button>
+  </div> -->
 </div>
-
+<div #jediSign class="jediSign" [style.backgroundColor]="isJediBackgroundColor(student)"></div>
+<button (click)="student.isJedi = !student.isJedi">Is Jedi?</button>
 <p *ngIf="!student">
   Sem dados para exibir
 </p>

@@ -19,4 +19,8 @@ export class StudentsComponent implements OnInit {
   clicked(){
     console.log(`Student: ${this.student.name}`)
   }
+
+  isJediBackgroundColor (student) {
+    return student.isJedi ? student.color : ''
+  }
 }
